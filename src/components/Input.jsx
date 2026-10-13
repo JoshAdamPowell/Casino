@@ -17,6 +17,7 @@ const Input = ({submitAnswer}) => {
     return (
         <div>
             <input 
+                type="number"
                 onChange={(e) => setValue(e.target.value)} 
                 value={value}
                 onKeyDown={(e) => handleEnter(e)}></input>
