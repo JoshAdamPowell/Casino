@@ -5,6 +5,7 @@ const ToggleBox = ({value, toggle, label}) => {
     const id = uuidv4();
     return(
         <>
+        <span>
         <label htmlFor={id}>{label}</label>
         <input
             id={id}
@@ -12,6 +13,7 @@ const ToggleBox = ({value, toggle, label}) => {
             type="checkbox"
             onClick={() => {toggle()}}
             />
+        </span>
         </>
     )
 }

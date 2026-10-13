@@ -9,9 +9,7 @@ function App() {
   const [hardMode, setHardMode] = useState(false);
   const [highRollerMode, setHighRollerMode] = useState(false);
 
-
   const getX = () => {
-    
     return Math.floor(Math.random() * 12) + 1;
   }
 
@@ -51,6 +49,7 @@ function App() {
   }
 
   useEffect(() => {
+    // Look, I know this isn't best practice but I'm lazy and it won't cascade. 
     // eslint-disable-next-line react-hooks/set-state-in-effect
     reset()
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -100,7 +99,7 @@ function App() {
         <div>
           <Input submitAnswer={checkAndReset}/>  
         </div>
-        {streak !== 0 && 
+        {streak > 1 && 
         <h3>
           You have got {streak} correct answers in a row!  
         </h3>
