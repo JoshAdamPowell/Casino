@@ -7,6 +7,9 @@ import Blackjack from './pages/Blackjack';
 
 function App() {
   const [streak, setStreak] = useState(0);
+  const [attempts, setAttempts] = useState(0);
+  const [correct, setCorrect] = useState(0);
+
   const [hardMode, setHardMode] = useState(false);
   const [highRollerMode, setHighRollerMode] = useState(false);
 
@@ -39,11 +42,12 @@ function App() {
     if (parseInt(answer) === x * y) {
       alert("correct!");
       setStreak(streak + 1)
+      setCorrect(correct + 1)
     } else {
       alert(`Incorrect, the correct answer is ${x * y}`);
       setStreak(0);
     }
-
+    setAttempts(attempts +1);
     reset();
   }
 
@@ -108,6 +112,7 @@ function App() {
         <div>
           <Input submitAnswer={checkAndReset}/>  
         </div>
+        You have got {correct} answers correct out of {attempts}
         {streak > 1 && 
         <h3>
           You have got {streak} correct answers in a row!  
