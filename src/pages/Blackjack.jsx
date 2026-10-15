@@ -3,13 +3,17 @@ import Input from "../components/Input";
 
 const Blackjack = () => {
     const MAX_VALUE = 1000;
-    const [currentValue, setCurrentValue] = useState(generateValue());
 
-    const generateValue = () => {
+        const generateValue = () => {
+        // eslint-disable-next-line react-hooks/purity
         const oneToTwoHundred = Math.floor(Math.random() * (MAX_VALUE / 5))
 
         return oneToTwoHundred * 5;
     }
+
+    const [currentValue, setCurrentValue] = useState(generateValue());
+
+
 
     const reset = () => {
         setCurrentValue(generateValue())
