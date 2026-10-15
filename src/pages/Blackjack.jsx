@@ -37,9 +37,11 @@ const Blackjack = () => {
         <Input
             submitAnswer={submit}
         />
-        <h3>
-            Your streak is ${streak}
-        </h3>
+        {streak > 1 && 
+            <h3>
+            You have got {streak} correct answers in a row!  
+            </h3>
+        }
     </div>)
 }
 
