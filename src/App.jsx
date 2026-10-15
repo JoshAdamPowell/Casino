@@ -3,11 +3,18 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Input from './components/Input'
 import ToggleBox from './components/ToggleBox';
+import Blackjack from './pages/Blackjack';
 
 function App() {
   const [streak, setStreak] = useState(0);
   const [hardMode, setHardMode] = useState(false);
   const [highRollerMode, setHighRollerMode] = useState(false);
+
+  const [blackJack, setblackJack] = useState(false);
+
+  const toggleBlackJack = () => {
+    setblackJack(!blackJack);
+  }
 
   const getX = () => {
     return Math.floor(Math.random() * 12) + 1;
@@ -89,10 +96,12 @@ function App() {
   return (
     <>
       <section id="center">
+        <button onClick={() => toggleBlackJack()}>I want to practice blackjack instead...</button>
         <div className="hero">
           <img src={"https://i.ebayimg.com/images/g/48wAAOSwaeVnLELT/s-l1600.png"} className="base" width="170" height="179" alt="" />
         </div>
-        <div>
+        {blackJack ? (<Blackjack></Blackjack>) :
+        (<><div>
           <h1>Roulette test!</h1>
           <h2>{getTestString()} </h2>
         </div>
@@ -115,6 +124,10 @@ function App() {
         label={"secret hard mode!"}
         value={hardMode}
         toggle={toggleHardMode} />
+        </>)
+        }
+        
+        
       </section>
     </>
   )
