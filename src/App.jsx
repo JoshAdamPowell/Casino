@@ -96,7 +96,7 @@ function App() {
   return (
     <>
       <section id="center">
-        <button onClick={() => toggleBlackJack()}>I want to practice blackjack instead...</button>
+        <button onClick={() => toggleBlackJack()}>I want to practice {blackJack ? 'roulette' : 'blackjack'} instead...</button>
         <div className="hero">
           <img src={"https://i.ebayimg.com/images/g/48wAAOSwaeVnLELT/s-l1600.png"} className="base" width="170" height="179" alt="" />
         </div>
@@ -119,15 +119,13 @@ function App() {
         value={highRollerMode}
         toggle={toggleHighRollerMode} />
       
-
       <ToggleBox
         label={"secret hard mode!"}
         value={hardMode}
         toggle={toggleHardMode} />
         </>)
         }
-        
-        
+         
       </section>
     </>
   )
