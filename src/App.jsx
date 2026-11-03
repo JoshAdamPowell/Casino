@@ -20,7 +20,11 @@ function App() {
   }
 
   const getX = () => {
-    return Math.floor(Math.random() * 12) + 1;
+    const values = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 25, 35];
+    const selection = Math.floor(Math.random() * values.length);
+    return values[selection];
+
+
   }
 
   const getY = () => {
@@ -109,6 +113,7 @@ function App() {
           <h1>Roulette test!</h1>
           <h2>{getTestString()} </h2>
         </div>
+        <div>Hi friends, I've made the test a little harder. Instead of going to 12x it now goes to 20x and will also include 25x and 35x!</div>
         <div>
           <Input submitAnswer={checkAndReset}/>  
         </div>
