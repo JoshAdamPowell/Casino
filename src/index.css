@@ -109,3 +109,10 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.warning {
+  background-color: rgba(180, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+  color: black;
+}

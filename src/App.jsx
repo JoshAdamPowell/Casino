@@ -113,7 +113,7 @@ function App() {
           <h1>Roulette test!</h1>
           <h2>{getTestString()} </h2>
         </div>
-        <div>Hi friends, I've made the test a little harder. Instead of going to 12x it now goes to 20x and will also include 25x and 35x!</div>
+        <div className='warning'>Hi friends, I've made the test a little harder. Instead of going to 12x it now goes to 20x and will also include 25x and 35x!</div>
         <div>
           <Input submitAnswer={checkAndReset}/>  
         </div>
